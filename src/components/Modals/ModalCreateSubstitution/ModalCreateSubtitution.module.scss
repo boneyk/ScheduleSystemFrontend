@@ -1,0 +1,97 @@
+@use '@/styles/helpers' as *;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.cardWrapper.cardWrapper {
+  box-shadow: none;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+.infoRow.infoRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  & :global(.MuiTypography-root) {
+    font-size: fluid(24, 16);
+  }
+}
+
+.icons.icons {
+  color: #9e9e9e;
+  margin-right: -8px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.wrapperTime:global(.MuiGrid2-root) {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  @include mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.containerRoleAndQuantity {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-top: 7px;
+  @include mobile {
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    :global(.MuiFormControl-root) {
+      width: 100%;
+    }
+  }
+}
+
+.wrapper:global(.MuiGrid2-root) {
+  position: static;
+  display: flex;
+  justify-content: flex-end;
+  gap: fluid-to-laptop(8, 4);
+}
+
+.overlay:global(.MuiBackdrop-root) {
+  position: absolute;
+  z-index: 10;
+  border-radius: inherit;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.actionButton:global(.MuiButton-root) {
+  min-height: 0;
+  height: fit-content;
+}
+
+.cancelButton.cancelButton {
+  padding: 8px 16px;
+}

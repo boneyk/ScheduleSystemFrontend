@@ -1,0 +1,352 @@
+@use "@/styles/helpers" as *;
+
+$max-content-width: 1700px;
+$border-radius: 8px;
+$padding-base: 16px;
+$padding-small: 8px;
+$gap-base: fluid(8, 4);
+$breakpoint-sm: 370px;
+$breakpoint-md: 700px;
+$color-text: #303030;
+$color-text-dark: #333;
+$color-border: rgba(0, 0, 0, 0.15);
+$color-checkbox: rgba(0, 0, 0, 0.4);
+$color-row-even: rgba(0, 0, 0, 0.04);
+$color-row-hover: rgba(0, 0, 0, 0.08);
+$color-accent-light: rgba(255, 115, 50, 0.1);
+$color-accent-medium: rgba(255, 115, 50, 0.2);
+$color-accent: rgba(255, 115, 50, 0.3);
+$color-accent-hover: rgba(255, 115, 50, 0.4);
+$scale-hover: 1.03;
+$scale-active: 0.95;
+
+.wrapper:global(.MuiGrid2-root) {
+  width: 100%;
+  max-width: $max-content-width;
+  min-width: 0;
+  flex-direction: column;
+  font-family: var(--font-family-base), sans-serif;
+  overflow: hidden;
+  margin: 0 auto;
+
+  & > h1 {
+    padding: 0;
+    font-size: fluid(40, 20);
+    margin: 0 0 $padding-small;
+  }
+}
+
+.table:global(.MuiGrid2-root) {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid $color-border;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+
+.infoButtons:global(.MuiGrid2-root) {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: $padding-base;
+  font-size: fluid(18, 14);
+  flex-wrap: nowrap;
+  gap: 32px;
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.officeAddress:global(.MuiBox-root) {
+  flex: 1 1 auto;
+  max-width: 700px;
+  min-width: 100px;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+}
+
+.actionButtons:global(.MuiGrid2-root) {
+  display: flex;
+  flex-direction: row;
+  gap: $gap-base;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.animatedButtons {
+  transition:
+          color var(--transition-slow),
+          background-color var(--transition-slow),
+          transform var(--transition-slow);
+  font-size: fluid(14, 10, true);
+
+  @media (max-width: $breakpoint-md) {
+    padding: 4px $padding-small;
+  }
+
+  &:hover {
+    transform: scale($scale-hover);
+  }
+}
+
+.outlinedSpecial:global(.MuiButton-root) {
+  @extend .animatedButtons;
+  background-color: transparent;
+  color: $color-text;
+  border: none;
+  padding: fluid-to-laptop(8, 4) fluid-to-laptop(16, 8);
+
+  &:hover {
+    background-color: transparent;
+    color: var(--color-black);
+  }
+
+  &:active {
+    animation: none;
+    transform: scale($scale-active);
+  }
+}
+
+.containedSpecial:global(.MuiButton-root) {
+  color: var(--color-white);
+  height: fit-content;
+  border-radius: fluid-to-laptop(8, 4);
+  padding: fluid-to-laptop(8, 4) fluid-to-laptop(16, 8);
+  font-size: fluid(14, 10, true);
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base),
+    transform var(--transition-base);
+
+  @media (max-width: $breakpoint-md) {
+    padding: 4px $padding-small;
+  }
+
+  &:active {
+    transform: scale($scale-active);
+  }
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.filterSelect:global(.MuiFormControl-root) {
+  @extend .animatedButtons;
+  margin-bottom: 0;
+  padding: 0 8px 0 0;
+
+  &:has(:global(.Mui-disabled)) {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &:active {
+    animation: none;
+    transform: scale($scale-active);
+  }
+
+  :global(.MuiOutlinedInput-root) {
+    font-family: var(--font-family-base), sans-serif;
+    font-size: fluid(14, 10, true);
+    color: $color-text;
+    background-color: transparent;
+    transition: color var(--transition-slow), opacity var(--transition-slow);
+
+    :global(.MuiOutlinedInput-notchedOutline) {
+      border: none;
+    }
+
+    &:hover {
+      color: var(--color-black);
+    }
+
+    :global(.MuiSelect-select) {
+      padding: fluid-to-laptop(8, 4) fluid-to-laptop(16, 8);
+
+      @media (max-width: $breakpoint-md) {
+        padding: 4px $padding-small;
+      }
+    }
+  }
+
+  :global(.MuiSelect-select) {
+    padding: 6px $padding-small;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.tableBox:global(.MuiBox-root) {
+  width: 100%;
+  min-width: 0;
+  max-width: $max-content-width;
+  overflow: hidden;
+}
+
+.data:global(.MuiDataGrid-root) {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  font-family: var(--font-family-base), sans-serif;
+  white-space: normal;
+  word-wrap: break-word;
+
+  :global(.MuiDataGrid-footerContainer) {
+    font-family: var(--font-family-base), sans-serif;
+
+    :global(.MuiTablePagination-selectLabel) {
+      font-family: var(--font-family-base), sans-serif;
+    }
+
+    :global(.MuiTablePagination-select) {
+      font-family: var(--font-family-base), sans-serif;
+    }
+    :global(.MuiTablePagination-displayedRows) {
+      font-family: var(--font-family-base), sans-serif;
+    }
+  }
+
+  :global(.MuiDataGrid-columnHeader) {
+    background-color: $color-accent;
+    transition: background-color var(--transition-slow);
+
+    &:focus,
+    &:focus-within {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $color-accent-hover;
+    }
+  }
+
+  :global(.MuiDataGrid-columnHeaderTitleContainer) {
+    overflow: visible;
+  }
+
+  :global(.MuiDataGrid-columnHeaderTitle) {
+    font-weight: 600;
+    font-size: 14px;
+    color: $color-text-dark;
+    white-space: normal;
+    line-height: 1.3;
+    text-overflow: clip;
+    overflow: visible;
+    word-break: auto-phrase;
+  }
+
+  :global(.MuiDataGrid-row) {
+    background-color: var(--color-white);
+    transition: background-color var(--transition-slow);
+
+    &:hover {
+      background-color: $color-row-hover;
+    }
+  }
+
+  :global(.MuiDataGrid-row:nth-of-type(even)) {
+    background-color: $color-row-even;
+    transition: background-color var(--transition-slow);
+
+    &:hover {
+      background-color: $color-row-hover;
+    }
+  }
+
+  :global(.MuiDataGrid-row.Mui-selected) {
+    background-color: $color-accent-light;
+    transition: background-color var(--transition-slow);
+
+    &:hover {
+      background-color: $color-accent-medium;
+    }
+  }
+
+  :global(.MuiDataGrid-cell) {
+    overflow: visible !important;
+    white-space: normal !important;
+    word-break: break-word;
+    line-height: 1.4;
+    padding-top: $padding-small;
+    padding-bottom: $padding-small;
+    display: flex;
+    align-items: center;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  :global(.MuiDataGrid-cellContent) {
+    overflow: visible;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  :global(.MuiCheckbox-root) {
+    color: $color-checkbox;
+    transition: color var(--transition-slow);
+
+    :global(.MuiSvgIcon-root) {
+      transition: background-color var(--transition-slow);
+    }
+
+    &:global(.Mui-checked) {
+      color: white;
+
+      :global(.MuiSvgIcon-root) {
+        background-color: $color-checkbox;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+:global {
+  .MuiMenu-paper {
+    font-family: var(--font-family-base), sans-serif;
+    font-size: fluid(14, 12);
+
+    .MuiMenuItem-root {
+      font-family: var(--font-family-base), sans-serif;
+      font-size: fluid(14, 12);
+      white-space: normal;
+      word-break: break-word;
+      transition: background-color var(--transition-slow);
+    }
+
+    .MuiListItemText-root .MuiTypography-root {
+      font-size: fluid(14, 12);
+      font-family: var(--font-family-base), sans-serif;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .MuiCheckbox-root {
+      color: $color-checkbox;
+      transition: color var(--transition-slow);
+
+      .MuiSvgIcon-root {
+        transition: background-color var(--transition-slow);
+      }
+
+      &.Mui-checked {
+        color: white;
+
+        .MuiSvgIcon-root {
+          background-color: $color-checkbox;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}

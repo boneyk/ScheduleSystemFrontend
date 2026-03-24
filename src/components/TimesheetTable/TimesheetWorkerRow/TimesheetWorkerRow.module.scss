@@ -1,0 +1,71 @@
+.cell:global(.MuiTableCell-root) {
+  padding: 4px;
+  transition: background-color var(--transition-fast);
+}
+
+.weekendCell:global(.MuiTableCell-root) {
+  background-color: rgb(215, 215, 215);
+  cursor: default !important;
+}
+
+.currentDayCell:global(.MuiTableCell-root) {
+  background-color: rgba(255, 100, 50, 0.1);
+}
+
+.fullnameCell.fullnameCell {
+  padding: 8px;
+  z-index: 2;
+  background-color: var(--color-white) !important;
+  position: sticky;
+  left: 0;
+  box-shadow: 5px 0 4px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.special.special {
+  text-align: center;
+  font-weight: 600;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.absenceLabel {
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: #7b5ea7;
+  display: block;
+}
+
+.emptyLabel {
+  text-align: center;
+  display: block;
+  color: var(--color-text-secondary, #888);
+}
+
+.row.row {
+  transition: background-color var(--transition-base);
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(240, 240, 240) !important;
+
+    & .fullnameCell {
+      background-color: rgb(240, 240, 240) !important;
+    }
+  }
+
+  &:last-child {
+    border-bottom: none;
+
+    & .cell {
+      border-bottom: none;
+    }
+
+    & .fullnameCell {
+      border-bottom: none;
+    }
+  }
+}

@@ -1,0 +1,173 @@
+@use '@/styles/helpers' as *;
+
+$text-muted: #7a7c7e;
+$role-color: #799f79;
+
+$first-col-shadow: 5px 0 15px var(--color-gray-200);
+
+$cell-h: fluid(60, 40);
+$font-main: fluid(18, 10);
+
+.counter {
+  @include flex-center();
+  width: fluid(40, 30);
+  height: fluid(20, 15);
+  border-radius: 10px;
+  border: var(--border-default);
+  background-color: transparent;
+  color: $text-muted;
+  font-size: $font-main;
+  line-height: 1;
+
+  @include mobile {
+    margin: -10px 0 5px;
+  }
+}
+
+.fullnameCountCell:global(.MuiTableCell-root) {
+  width: fluid(300, 100);
+  height: $cell-h;
+}
+
+.fullnameCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px !important;
+  font-size: $font-main;
+}
+
+.monthDate {
+  width: fluid(60, 40);
+  height: $cell-h;
+  padding: 0;
+}
+
+.dateNum {
+  padding: 0;
+  font-size: fluid(20, 15);
+  line-height: 1;
+  margin: 0 0 3px;
+}
+
+.weekDay {
+  margin: 0;
+  color: $text-muted;
+  font-weight: var(--font-weight-regular);
+  font-size: fluid(10, 8);
+  line-height: 1;
+}
+
+.currentCell:global(.MuiTableCell-root) {
+  color: var(--color-white);
+  background-color: var(--color-pointer);
+  border: solid 1px var(--color-pointer);
+}
+
+.currentText {
+  color: var(--color-white);
+}
+
+.wrapper {
+  @include flex-center();
+}
+
+.dayViewCell:global(.MuiTableCell-root) {
+  width: 100%;
+  min-width: 700px;
+  max-width: 1700px;
+  height: $cell-h;
+  padding: 0;
+  border-right: none;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.tick {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.tickHour .tickLine {
+  width: 2px;
+  height: calc($cell-h * 0.35);
+  background-color: $text-muted;
+}
+
+.tickHalf .tickLine {
+  width: 1.5px;
+  height: calc($cell-h * 0.35);
+  background-color: $text-muted;
+}
+
+.tickSmall .tickLine {
+  width: 1px;
+  height: calc($cell-h * 0.2);
+  background-color: $text-muted;
+}
+
+.tickLabel {
+  position: absolute;
+  bottom: calc($cell-h * 0.35 + 3px);
+  font-size: fluid(14, 9);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-black);
+  line-height: 1;
+  white-space: nowrap;
+  transform: translateX(0);
+}
+
+.timeIndicator {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-50%);
+  pointer-events: none;
+  transition: left 1s linear;
+}
+
+.timeIndicatorEllipse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-pointer);
+  border-radius: 10px;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+
+.timeIndicatorLabel {
+  font-size: fluid(10, 8);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.timeIndicatorLine {
+  width: 2px;
+  background-color: var(--color-pointer);
+}
+
+.stickyFirstColHead:global(.MuiTableCell-stickyHeader) {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 7;
+  background: var(--color-white);
+  box-shadow: $first-col-shadow;
+}

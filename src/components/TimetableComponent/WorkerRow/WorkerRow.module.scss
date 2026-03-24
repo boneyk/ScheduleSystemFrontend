@@ -1,0 +1,242 @@
+@use '@/styles/helpers' as *;
+
+$first-col-shadow: 5px 0 15px var(--color-gray-200);
+$shift-border-radius: fluid(6, 3, true);
+
+.workerData:global(.MuiTableCell-root) {
+  padding: 0 8px;
+  vertical-align: middle;
+  height: fluid(50, 35);
+}
+
+.logo {
+  @include square(fluid(40, 28));
+  flex-shrink: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px !important;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.fullName {
+  display: block;
+  word-break: break-word;
+  min-width: 0;
+  font-weight: 600;
+  font-size: fluid(14, 9);
+}
+
+.substitutionLabel {
+  display: block;
+  font-size: fluid(11, 7);
+  font-weight: 700;
+  color: #555;
+}
+
+.stickyFirstCol:global(.MuiTableCell-root) {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: var(--color-white);
+  box-shadow: $first-col-shadow;
+  transition: background-color var(--transition-fast);
+  padding: 2px 4px;
+}
+
+.pointer {
+  position: absolute;
+  height: 110%;
+  width: 2px;
+  background-color: var(--color-pointer);
+  top: -10%;
+  z-index: 4;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hoverRow:hover {
+  background-color: rgb(245, 245, 245);
+  transition: background-color var(--transition-fast);
+
+  & > .stickyFirstCol {
+    background-color: rgb(245, 245, 245) !important;
+  }
+}
+
+.shift {
+  position: absolute;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+  border-width: 2px;
+  border-style: solid;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+  pointer-events: none;
+}
+
+.startShift {
+  left: calc(10% + 0.5px);
+  border-top-left-radius: $shift-border-radius;
+  border-bottom-left-radius: $shift-border-radius;
+  border-right: none;
+  text-align: center;
+  font-size: fluid(12, 9);
+  white-space: nowrap;
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+}
+
+.endShift {
+  left: -0.5px;
+  border-top-right-radius: $shift-border-radius;
+  border-bottom-right-radius: $shift-border-radius;
+  border-left: none;
+  z-index: 2;
+}
+
+.midShift {
+  left: -0.5px;
+  width: calc(100% + 1px);
+  border-left: none;
+  border-right: none;
+  z-index: 2;
+}
+
+.soloShift {
+  left: 5%;
+  border-radius: $shift-border-radius;
+  font-size: fluid(12, 9);
+  padding-top: fluid(3, 0, true);
+  align-items: center;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.dayViewShift {
+  border-radius: $shift-border-radius;
+  font-size: fluid(12, 9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.dayViewShiftFull {
+  left: 0;
+  width: 100%;
+}
+
+.work {
+  background: rgba(226, 242, 246, 0.9);
+  border-color: rgba(130, 170, 180, 0.8);
+  color: rgba(40, 60, 65, 0.8);
+
+  &.highlighted,
+  &:hover {
+    background: rgba(180, 220, 235, 1);
+    border-color: rgba(100, 150, 165, 1);
+  }
+}
+
+.sick {
+  background: rgba(255, 248, 225, 0.95);
+  border-color: rgba(255, 167, 38, 0.55);
+  color: rgba(255, 152, 0, 1);
+
+  &.highlighted,
+  &:hover {
+    background: rgba(255, 238, 180, 1);
+    border-color: rgba(255, 152, 0, 0.8);
+  }
+}
+
+.vacation {
+  background: rgba(255, 235, 238, 0.95);
+  border-color: rgba(244, 67, 54, 0.45);
+  color: rgba(198, 40, 40, 1);
+
+  &.highlighted,
+  &:hover {
+    background: rgba(255, 205, 210, 1);
+    border-color: rgba(229, 57, 53, 0.7);
+  }
+}
+
+.holiday:global(.MuiTableCell-root) {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.restrictedCell:global(.MuiTableCell-root) {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.clickable:global(.MuiTableCell-root) {
+  cursor: pointer;
+}
+
+.notClickable:global(.MuiTableCell-root) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.dayViewCell:global(.MuiTableCell-root) {
+  width: 100%;
+  min-width: 700px;
+  max-width: 1700px;
+  border-right: none;
+}
+
+.workerDayCell {
+  position: relative;
+
+  &:hover:not(.hasShift) {
+    background-color: rgb(0, 0, 0, 0.08);
+  }
+}
+
+.hasShift {
+}
+
+.iconWrapper:global(.MuiGrid2-root) {
+  width: 100%;
+  height: fluid(40, 30);
+  cursor: pointer;
+
+  .addIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all var(--transition-fast);
+    color: #6b6b6b;
+  }
+
+  &:hover .addIcon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+  }
+}

@@ -1,0 +1,57 @@
+@use '@/styles/helpers' as *;
+
+.dialogTitle:global(.MuiDialogTitle-root) {
+  position: relative;
+  padding: 16px 16px 8px;
+}
+
+.dialogWrapper {
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-size: fluid(28, 14);
+}
+
+.icon.icon {
+  padding: 0;
+}
+
+.butWrapper.butWrapper {
+  margin-top: -5px;
+}
+
+.dialogActionsWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px 8px !important;
+  gap: 8px;
+
+  @media (max-width: 400px) {
+    padding-top: 8px !important;
+  }
+}
+
+.actionButton:global(.MuiButton-root) {
+  font-size: 16px;
+  padding: 4px 8px;
+}
+
+.content {
+  padding: 0 16px 8px !important;
+  height: fit-content;
+}
+
+.addDialog {
+  height: 80%;
+  margin: auto auto;
+}
+
+.backdrop {
+  backdrop-filter: blur(3px);
+}
+
+.cancel.cancel {
+  padding: 8px;
+}

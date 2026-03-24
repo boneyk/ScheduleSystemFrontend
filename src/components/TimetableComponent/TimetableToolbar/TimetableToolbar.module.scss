@@ -1,0 +1,8 @@
+.timetable-header {
+  padding: calc(var(--timetable-header-padding-y) / 2) 0 var(--timetable-header-padding-y);
+  width: 100%;
+}
+
+.noPaddingBottom {
+  padding-bottom: 0;
+}

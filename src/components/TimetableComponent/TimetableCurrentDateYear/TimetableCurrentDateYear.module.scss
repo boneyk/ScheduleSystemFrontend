@@ -1,0 +1,129 @@
+@use '../../../styles/helpers' as *;
+
+.wrapper:global(.MuiGrid2-root) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto var(--margin-s);
+}
+
+.noMarginBottom:global(.MuiGrid2-root) {
+  margin-bottom: 8px;
+  margin-top: -4px;
+
+  @media (width <= 470px) {
+    margin-top: -10px;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  &.column {
+    margin-bottom: 16px;
+
+    @media (width <= 470px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.column.column {
+  @media (width <= 470px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.dateSection:global(.MuiGrid2-root) {
+  display: flex;
+  align-items: center;
+  gap: fluid(16, 8, true);
+
+  @media (width <= 470px) {
+    align-self: flex-start;
+  }
+}
+
+.year {
+  display: flex;
+  @include flex-center();
+  margin: 0 var(--margin-xs);
+  font-family: var(--font-family-base), sans-serif;
+  font-size: fluid(35, 25, true);
+}
+
+.yearButton:global(.MuiButton-root) {
+  min-width: 0;
+  min-height: 0;
+  @include square(var(--timetable-controls-height));
+  border-radius: 50%;
+  transition: transform var(--transition-base);
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.tools:global(.MuiGrid2-root) {
+  display: flex;
+  align-items: center;
+  gap: fluid(16, 8, true);
+}
+
+.isDropdown.isDropdown {
+  @media (width <= 470px) {
+    width: 100%;
+  }
+}
+
+.selectOffice:global(.MuiInputBase-root) {
+  width: fluid(400, 240, true);
+  height: 40px;
+  border-radius: fluid(12, 8, true);
+  font-size: fluid(16, 12, true);
+  font-family: var(--font-family-base), sans-serif !important;
+  background-color: transparent;
+
+  @media (width <= 470px) {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+.datePickerWrapper {
+  position: relative;
+  height: 40px;
+  width: 150px;
+}
+
+.column .datePickerWrapper {
+  @media (width <= 470px) {
+    width: 100%;
+  }
+}
+
+.datePicker:global(.MuiFormControl-root) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.datePicker :global(.MuiInputBase-root) {
+  height: 40px;
+  border-radius: fluid(12, 8, true);
+}
+
+.datePicker :global(.MuiInputBase-input) {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.formControl:global(.MuiFormControl-root) {
+  margin-bottom: 0;
+
+  @media (width <= 470px) {
+    width: 100%;
+  }
+}

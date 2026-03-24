@@ -1,0 +1,104 @@
+.drawer :global(.MuiDrawer-paper) {
+  width: 500px;
+  max-width: 100vw;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.tabs :global(.MuiTabs-indicator) {
+  background-color: #ff6b35;
+}
+.tabs :global(.Mui-selected) {
+  color: #ff6b35 !important;
+}
+.tabs :global(.MuiTabs-flexContainer) {
+  justify-content: center;
+}
+
+.tabs:global(.MuiButtonBase-root) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 500;
+  font-family: var(--font-family-base), sans-serif;
+}
+
+.tabTittle.tabTittle {
+  font-family: var(--font-family-base), sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 5px;
+
+  & .MuiTypography-root {
+    margin-left: 8px;
+    flex: 1;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+.cardsContainer {
+  padding-top: 15px;
+  overflow-y: auto;
+  flex: 1;
+  min-width: 0;
+}
+
+.loadingState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.card.card {
+  cursor: pointer;
+  background-color: var(--paper-bg);
+  margin: 8px;
+  padding: 7px;
+  border-radius: 16px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px transparent;
+  transition: box-shadow var(--transition-base), border var(--transition-base);
+
+  &:hover {
+    box-shadow: 0 0 5px var(--color-pointer);
+    border: solid 1px var(--color-pointer);
+  }
+}
+.messageModal {
+  padding: 12px;
+}
+.card--expanded {
+  background-color: var(--selected-bg);
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.status {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.cancelButton.cancelButton {
+  padding: 8px 16px;
+}

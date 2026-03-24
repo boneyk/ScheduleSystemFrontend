@@ -1,0 +1,59 @@
+@use "@/styles/helpers" as *;
+
+.button:global(.MuiButton-root) {
+  margin: 8px;
+  width: fluid(400, 220);
+  border-radius: 8px;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 40px;
+}
+
+.icon {
+  font-size: 180px !important;
+  color: var(--text-secondary);
+  position: relative;
+  bottom: -40px;
+}
+
+.input:global(.MuiTextField-root),
+.input:global(.MuiFormControl-root) {
+  margin: 8px 0 2px;
+  width: fluid(400, 220);
+  font-family: var(--font-family-base), sans-serif;
+
+  :global(.MuiInputBase-input),
+  :global(.MuiInputLabel-root) {
+    font-family: var(--font-family-base), sans-serif;
+    font-size: fluid(18, 16);
+  }
+
+  :global(.MuiFilledInput-root)::after {
+    border-bottom-color: var(--color-pointer);
+  }
+
+  :global(.MuiInputLabel-root.Mui-focused) {
+    color: var(--color-pointer);
+  }
+}
+
+.alert:global(.MuiAlert-root) {
+  font-family: var(--font-family-base), sans-serif;
+}
+
+.helper:global(.MuiFormHelperText-root) {
+  font-family: var(--font-family-base), sans-serif;
+  margin-left: 0;
+  font-size: fluid(14, 12);
+}
+
+.errorAlert {
+  position: absolute;
+  top: 0;
+}

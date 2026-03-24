@@ -1,0 +1,21 @@
+@use "@/styles/helpers" as *;
+
+.title.title {
+  padding: 16px 16px 8px;
+  font-weight: 400;
+  font-size: fluid(20, 16);
+}
+
+.content.content {
+  padding: 8px 16px;
+
+  @media (min-width: 430px){
+    margin-bottom: 8px;
+  }
+}
+
+.actions.actions {
+  padding: 0 16px 16px;
+  display: flex;
+  gap: 8px;
+}

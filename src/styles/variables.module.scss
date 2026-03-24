@@ -1,0 +1,566 @@
+@use "./helpers" as *;
+
+/// radiuses ///
+$radius-xxxs: 2px;
+$radius-xxs: 4px;
+$radius-xs: 8px;
+$radius-s: 12px;
+$radius-m: 16px;
+$radius-l: 20px;
+$radius-xl: 24px;
+$radius-xxl: 28px;
+$radius-xxxl: 32px;
+$radius-big: 40px;
+
+/// margins ///
+$margin-xxxs: 2px;
+$margin-xxs: 4px;
+$margin-xs: 8px;
+$margin-s: 12px;
+$margin-m: 16px;
+$margin-l: 20px;
+$margin-xl: 24px;
+$margin-xxl: 28px;
+$margin-xxxl: 32px;
+$margin-big: 40px;
+
+/// paddings ///
+$padding-xxxs: 2px;
+$padding-xxs: 4px;
+$padding-xs: 8px;
+$padding-s: 12px;
+$padding-m: 16px;
+$padding-l: 20px;
+$padding-xl: 24px;
+$padding-xxl: 28px;
+$padding-xxxl: 32px;
+$padding-big: 40px;
+
+/// gaps ///
+$gap-xxxs: 2px;
+$gap-xxs: 4px;
+$gap-xs: 8px;
+$gap-s: 10px; // часто встречается (gap: 10px)
+$gap-m: 12px;
+$gap-l: 15px; // часто встречается (gap: 15px)
+$gap-xl: 20px;
+$gap-xxl: 24px;
+
+/// font sizes ///
+$font-size-xxs: 6px;
+$font-size-xs: 8px;
+$font-size-s: 12px;
+$font-size-m: 14px;
+$font-size-l: 18px;
+$font-size-xl: 22px;
+
+$font-family-base: sans-serif, serif;
+
+/// font weights ///
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+/// colors ///
+$color-neutral-0: #000000;
+$color-neutral-10: #1a1a1a;
+$color-black: #262626;
+$color-neutral-30: #333333;
+$color-neutral-40: #3f3f3f;
+$color-neutral-50: #62656a;
+$color-neutral-60: #b9b9b9;
+$color-neutral-70: #d2d2d2;
+$color-neutral-80: #eeeeee;
+$color-neutral-90: #f7f8f9;
+$color-white: #fff;
+
+$color-brand-50: #fe5000;
+$color-brand-60: #ff7332;
+$color-brand-70: #fe8750;
+
+$color-primary: #418cff;
+$color-info-50: #0066ff;
+$color-info-60: #3f8cff;
+
+$color-error: #d96a75;
+$color-error-0: #201e1e;
+$color-error-50: #ff002e;
+$color-error-60: #fa5050;
+$color-error-100: #fffafa;
+
+$color-success: #3ab08e;
+$color-success-50: #009944;
+$color-success-60: #43b67c;
+
+$color-warning: #fab067;
+$color-warning-30: #ffb900;
+$color-warning-40: #fec223;
+$color-warning-50: #ffcf54;
+
+//////////////////////////////////////////////////////////////////////
+/// font ///
+$font-primary: 'Roboto';
+
+$font-size-xxxs: 8px;
+$font-size-xxs: 10px;
+$font-size-xs: 12px;
+$font-size-s: 14px;
+$font-size-sm: 16px;
+$font-size-md: 18px;
+$font-size-lg: 20px;
+$font-size-xl: 22px;
+$font-size-xxl: 28px;
+$font-size-xxxl: 36px;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$line-height-xxs: 12px;
+$line-height-xs: 16px;
+$line-height-s: 20px;
+$line-height-md: 24px;
+$line-height-lg: 28px;
+$line-height-xl: 36px;
+$line-height-xxl: 44px;
+
+.title1Bold {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-xxxl;
+  line-height: $line-height-xxl;
+}
+
+.title1Medium {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-xxxl;
+  line-height: $line-height-xxl;
+}
+
+.title1Regular {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-xxxl;
+  line-height: $line-height-xxl;
+}
+
+.title2Bold {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-xxl;
+  line-height: $line-height-xl;
+}
+
+.title2Medium {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-xxl;
+  line-height: $line-height-xl;
+}
+
+.title2Regular {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-xxl;
+  line-height: $line-height-xl;
+}
+
+.title3Bold {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-xl;
+  line-height: $line-height-lg;
+}
+
+.title3Medium {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-xl;
+  line-height: $line-height-lg;
+}
+
+.title3Regular {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-xl;
+  line-height: $line-height-lg;
+}
+
+.title4Bold {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-lg;
+  line-height: $line-height-lg;
+}
+
+.title4Medium {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-lg;
+  line-height: $line-height-lg;
+}
+
+.title4Regular {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-lg;
+  line-height: $line-height-lg;
+}
+
+.title5Bold {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+}
+
+.title5Medium {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+}
+
+.title5Regular {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+}
+
+.bodyBold {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-sm;
+  line-height: $line-height-s;
+}
+
+.bodyMedium {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-sm;
+  line-height: $line-height-s;
+}
+
+.bodyRegular {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+  line-height: $line-height-s;
+}
+
+.Caption1Bold {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-s;
+  line-height: $line-height-s;
+}
+
+.Caption1Medium {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-s;
+  line-height: $line-height-s;
+}
+
+.Caption1Regular {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-s;
+  line-height: $line-height-s;
+}
+
+.Caption2Bold {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+}
+
+.Caption2Medium {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+}
+
+.Caption2Regular {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+}
+
+.Caption3Bold {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-xxs;
+  line-height: $line-height-xxs;
+}
+
+.Caption3Medium {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-xxs;
+  line-height: $line-height-xxs;
+}
+
+.Caption3Regular {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-xxs;
+  line-height: $line-height-xxs;
+}
+
+.Caption4Bold {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-xxxs;
+  line-height: $line-height-xxs;
+}
+
+.Caption4Medium {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-xxxs;
+  line-height: $line-height-xxs;
+}
+
+.Caption4Regular {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-xxxs;
+  line-height: $line-height-xxs;
+}
+
+.typesetting{
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+  line-height: $line-height-md;
+}
+
+$font-size-xs: 6px;
+$font-size-s: 8px;
+$font-size-m: 14px;
+$font-size-l: 18px;
+$font-size-xl: 22px;
+
+$font-size-xs: 6px;
+$font-size-s: 8px;
+$font-size-m: 14px;
+$font-size-l: 18px;
+$font-size-xl: 22px;
+
+// нейтральные (для бордеров/фонов)
+$color-gray-50: #fafafa;
+$color-gray-100: #f5f5f5;
+$color-gray-200: #efefef; // встречается в бордерах таймтейбла (#EFEFEF)
+$color-gray-300: #dcdcdc;
+$color-gray-400: #ababab;
+$color-gray-500: #9e9e9e;
+
+// служебные цвета для таймтейбла/календаря
+$color-border-default: $color-gray-200;
+$color-bg-hover: $color-gray-100;
+$color-bg-active: $color-gray-300;
+$color-bg-disabled: rgba(171, 171, 171, 0.86);
+
+$color-pointer: #ff7332; // указатель в календаре
+
+/// borders ///
+$border-width-thin: 1px;
+
+$border-default: $border-width-thin solid $color-border-default;
+
+/// z-indexes ///
+$z-base: 1;
+$z-header: 3;
+$z-controls: 5;
+$z-popup: 10;
+
+/// transitions ///
+$easing-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+$transition-fast: 250ms $easing-smooth;
+$transition-base: 380ms $easing-smooth;
+$transition-slow: 760ms $easing-smooth;
+
+/// sizes (timetable / calendar) ///
+$timetable-workers-width: 300px;
+$timetable-workers-height: 60px;
+
+$timetable-header-padding-y: 18px;
+
+$timetable-controls-height: 40px;
+
+$move-button-width: 50px;
+$move-button-height: 30px;
+$move-button-radius: 15px;
+
+$calendar-pointer-width: 2px;
+$calendar-pointer-top: 55px;
+
+/// exports (для ts + глобальные css vars) ///
+
+//Экспорт переменных для ts файлов
+:export {
+  colorPrimary: $color-primary;
+  colorSuccess: $color-success;
+  colorError: $color-error;
+  colorWarning: $color-warning;
+  colorPrimaryLight: $color-info-50;
+  colorPrimaryDark: $color-info-60;
+  colorContrast: $color-white;
+  colorSecondaryMain: $color-brand-50;
+  colorSecondaryLight: $color-brand-60;
+  colorSecondaryDark: $color-brand-70;
+  colorWhite: $color-white;
+  colorNeutral: $color-neutral-80;
+  colorHoverNeutral: $color-gray-400;
+
+  fontPrimary:$font-primary;
+  fontWeightRegular: $font-weight-regular;
+  fontWeightMedium: $font-weight-medium;
+  fontWeightBold: $font-weight-bold;
+
+  colorBorderDefault: $color-border-default;
+  colorPointer: $color-pointer;
+
+  marginXXS: $margin-xxs;
+  marginXS: $margin-xs;
+  marginS: $margin-s;
+  marginM: $margin-m;
+
+  radiusXS: $radius-xs;
+  radiusS: $radius-s;
+  radiusM: $radius-m;
+
+  fontSizeS: $font-size-s;
+  fontSizeM: $font-size-m;
+  fontSizeL: $font-size-l;
+
+  fontFamilyBase: $font-family-base;
+
+  timetableWorkersWidth: $timetable-workers-width;
+  timetableWorkersHeight: $timetable-workers-height;
+
+  monthSwitcherFontSize: fluid(16, 10, true);
+  monthSwitcherBorderRadius: fluid(12, 6, true);
+}
+
+:root {
+  // margins
+  --margin-xxxs: #{$margin-xxxs};
+  --margin-xxs: #{$margin-xxs};
+  --margin-xs: #{$margin-xs};
+  --margin-s: #{$margin-s};
+  --margin-m: #{$margin-m};
+  --margin-l: #{$margin-l};
+  --margin-xl: #{$margin-xl};
+  --margin-xxl: #{$margin-xxl};
+  --margin-xxxl: #{$margin-xxxl};
+  --margin-big: #{$margin-big};
+
+  // paddings
+  --padding-xxxs: #{$padding-xxxs};
+  --padding-xxs: #{$padding-xxs};
+  --padding-xs: #{$padding-xs};
+  --padding-s: #{$padding-s};
+  --padding-m: #{$padding-m};
+  --padding-l: #{$padding-l};
+  --padding-xl: #{$padding-xl};
+  --padding-xxl: #{$padding-xxl};
+  --padding-xxxl: #{$padding-xxxl};
+  --padding-big: #{$padding-big};
+
+  // radiuses
+  --radius-xxxs: #{$radius-xxxs};
+  --radius-xxs: #{$radius-xxs};
+  --radius-xs: #{$radius-xs};
+  --radius-s: #{$radius-s};
+  --radius-m: #{$radius-m};
+  --radius-l: #{$radius-l};
+  --radius-xl: #{$radius-xl};
+  --radius-xxl: #{$radius-xxl};
+  --radius-xxxl: #{$radius-xxxl};
+  --radius-big: #{$radius-big};
+
+  // gaps
+  --gap-xxxs: #{$gap-xxxs};
+  --gap-xxs: #{$gap-xxs};
+  --gap-xs: #{$gap-xs};
+  --gap-s: #{$gap-s};
+  --gap-m: #{$gap-m};
+  --gap-l: #{$gap-l};
+  --gap-xl: #{$gap-xl};
+  --gap-xxl: #{$gap-xxl};
+
+  // colors
+  --color-primary: #{$color-primary};
+  --color-success: #{$color-success};
+  --color-error: #{$color-error};
+  --color-warning: #{$color-warning};
+  --color-black: #{$color-black};
+  --color-white: #{$color-white};
+
+  --color-gray-50: #{$color-gray-50};
+  --color-gray-100: #{$color-gray-100};
+  --color-gray-200: #{$color-gray-200};
+  --color-gray-300: #{$color-gray-300};
+  --color-gray-400: #{$color-gray-400};
+  --color-gray-500: #{$color-gray-500};
+
+  --color-neutral-50: #{$color-neutral-50};
+  --color-neutral-60: #{$color-neutral-60};
+  --color-neutral-40: #{$color-neutral-40};
+  --color-neutral-30: #{$color-neutral-30};
+  --color-neutral-10: #{$color-neutral-10};
+
+  --color-border-default: #{$color-border-default};
+  --color-bg-hover: #{$color-bg-hover};
+  --color-bg-active: #{$color-bg-active};
+  --color-bg-disabled: #{$color-bg-disabled};
+
+  --color-pointer: #{$color-pointer};
+
+  // typography
+  --font-size-xxs: #{$font-size-xxs};
+  --font-size-xs: #{$font-size-xs};
+  --font-size-s: #{$font-size-s};
+  --font-size-m: #{$font-size-m};
+  --font-size-l: #{$font-size-l};
+  --font-size-xl: #{$font-size-xl};
+
+  --font-family-base: #{$font-family-base};
+
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+
+  // borders
+  --border-width-thin: #{$border-width-thin};
+  --border-default: #{$border-default};
+
+  // z-indexes
+  --z-base: #{$z-base};
+  --z-header: #{$z-header};
+  --z-controls: #{$z-controls};
+  --z-popup: #{$z-popup};
+
+  // transitions
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+
+  // sizes (timetable / calendar)
+  --timetable-workers-width: #{$timetable-workers-width};
+  --timetable-workers-height: #{$timetable-workers-height};
+  --timetable-header-padding-y: #{$timetable-header-padding-y};
+  --timetable-controls-height: #{$timetable-controls-height};
+  --move-button-width: #{$move-button-width};
+  --move-button-height: #{$move-button-height};
+  --move-button-radius: #{$move-button-radius};
+  --calendar-pointer-width: #{$calendar-pointer-width};
+  --calendar-pointer-top: #{$calendar-pointer-top};
+}

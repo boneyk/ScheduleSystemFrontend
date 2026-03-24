@@ -1,0 +1,16 @@
+@use "@/styles/helpers" as *;
+
+.info {
+  width: calc(100% - 110px);
+}
+
+.infoText {
+  white-space: break-spaces;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+
+  &:global(.MuiTypography-h6) {
+    font-size: fluid(20, 16);
+  }
+}

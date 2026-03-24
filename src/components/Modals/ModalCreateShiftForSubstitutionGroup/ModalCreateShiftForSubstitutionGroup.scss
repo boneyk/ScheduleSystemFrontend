@@ -1,0 +1,245 @@
+@use '@/styles/helpers' as *;
+
+.content:global(.MuiDialogContent-root) {
+  display: flex;
+  @include flex-center();
+  padding: 4px;
+  width: 100%;
+  box-sizing: border-box;
+
+  & :global(.MuiStack-root) {
+    width: 100%;
+    box-sizing: border-box;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+
+.sectionName:global(.MuiGrid2-root) {
+  display: flex;
+  flex-direction: row;
+  @include flex-center();
+  gap: 6px;
+  justify-content: flex-start;
+  padding: 4px 8px;
+}
+
+.container:global(.MuiGrid2-root) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 3px;
+  @include flex-center();
+  margin-top: 5px;
+  padding: 0 8px;
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+}
+
+.containerRoleAndQuantity:global(.MuiGrid2-root) {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  margin-top: 5px;
+  padding: 0 8px;
+}
+
+.containerHeader:global(.MuiGrid2-root) {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  &.manyAbsence {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+  @include mobile {
+    padding: 0;
+    width: 100%;
+    align-items: stretch;
+
+    & > * {
+      width: 100%;
+    }
+  }
+}
+
+.toggleWrapper.toggleWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 8px;
+  @include mobile {
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 0;
+  }
+}
+
+.selectWrapper.selectWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 1fr;
+  box-sizing: border-box;
+  padding: 0 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  :global(.MuiFormLabel-root) {
+    margin-right: 0 !important;
+    transform-origin: top left !important;
+    left: 7px !important;
+  }
+
+  @include mobile {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    :global(.MuiList-root) {
+      padding: 4px 6px !important;
+      max-width: calc(100% - 5px) !important;
+    }
+  }
+}
+
+.timeButton:global(.MuiToggleButton-root) {
+  width: 100%;
+  text-transform: none;
+  @include mobile {
+    font-size: 12px;
+    padding: 10px 4px;
+    width: 100%;
+  }
+}
+
+.dialogActions:global(.MuiDialogActions-root) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.wrapper:global(.MuiDialog-root) {
+  :global(.MuiPaper-root) {
+    width: 600px;
+    margin: 0 auto;
+
+    @include mobile {
+      width: 80%;
+      max-width: 400px;
+      min-width: 285px;
+    }
+  }
+}
+
+.picker:global(.MuiFormControl-root) {
+  width: 100%;
+  box-sizing: border-box;
+
+  & :global(.MuiFormHelperText-root) {
+    display: none;
+  }
+
+  & :global(.MuiOutlinedInput-root.Mui-disabled):hover :global(.MuiOutlinedInput-notchedOutline) {
+    border-color: rgba(0, 0, 0, 0.23);
+    cursor: default;
+  }
+}
+
+.containerInfo:global(.MuiGrid2-root) {
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 4px;
+    @include flex-center();
+    margin-top: 4px;
+  }
+
+  & :global(.MuiTypography-root) {
+    font-size: 16px;
+    word-break: break-word;
+  }
+}
+
+.infoRow:global(.MuiGrid2-root) {
+  padding: 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 5px;
+  width: 100%;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    align-self: flex-start;
+  }
+
+  & :global(.MuiTypography-root) {
+    font-size: 16px;
+    word-break: break-word;
+  }
+}
+
+.contentToDelete.contentToDelete {
+  padding: 0 8px;
+}
+
+.switcher.switcher {
+  margin-left: 8px;
+}
+
+.deleteActions.deleteActions {
+  gap: 8px;
+}
+
+.deleteTitle.deleteTitle {
+  padding-left: 8px;
+  font-size: fluid(20, 16);
+}
+
+.info.info {
+  margin-top: 12px;
+  display: grid;
+}
+
+.datePickers.datePickers {
+  // margin-top: 12px;
+  column-gap: 8px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 395px) {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+}
+
+.datePicker.datePicker {
+  width: 1fr;
+}
+
+.absenceLoader {
+  margin-left: 16px;
+}

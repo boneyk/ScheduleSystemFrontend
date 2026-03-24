@@ -1,0 +1,11 @@
+.infoRow:global(.MuiStack-root) {
+  padding-left: 8px;
+
+  &:first-child {
+    margin-top: 4px;
+  }
+
+  &:last-child {
+    margin-bottom: 8px;
+  }
+}

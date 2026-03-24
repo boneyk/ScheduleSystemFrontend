@@ -1,0 +1,24 @@
+@use "@/styles/helpers" as *;
+
+.container:global(.MuiStack-root) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+
+  & :global(.MuiTypography-root) {
+    font-family: var(--font-family-base), sans-serif;
+    font-size: fluid(20, 16);
+    font-weight: 400;
+  }
+}
+
+.icons.icons {
+  color: #9e9e9e;
+  margin-right: -8px;
+}
+
+.name:global(.MuiTypography-root) {
+  font-family: var(--font-family-base), sans-serif;
+  font-size: fluid(24, 16);
+}

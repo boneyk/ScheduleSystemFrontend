@@ -1,0 +1,114 @@
+@use '@/styles/helpers' as *;
+
+.datePicker:global(.MuiFormControl-root) {
+  width: 100%;
+  box-sizing: border-box;
+
+  & :global(.MuiFormHelperText-root) {
+    display: none;
+  }
+}
+
+.datePeriod:global(.MuiGrid2-root) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.info:global(.MuiBox-root) {
+  width: 100%;
+  @include mobile-above {
+    padding: 0 8px;
+  }
+
+  & :global(.MuiTypography-root) {
+    &:last-child {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.wrapper:global(.MuiGrid2-root),
+.wrapperTime:global(.MuiGrid2-root) {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 8px;
+  gap: 8px;
+
+  .timePeriod:global(.MuiGrid2-root) {
+    width: 1fr;
+  }
+}
+
+.wrapper:global(.MuiGrid2-root) {
+  padding: 0;
+
+  @include mobile-above {
+    padding: 0 8px;
+  }
+}
+
+.contentWrapper:global(.MuiGrid2-root) {
+  width: 100%;
+  @include mobile {
+    padding: 0 8px;
+  }
+}
+
+.shiftPicker.shiftPicker {
+  margin-top: 5px;
+}
+
+.periodDatePickers:global(.MuiGrid2-root) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  width: 100%;
+
+  @include mobile-above {
+    padding: 0 8px;
+  }
+
+  @media (max-width: 405px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.editGroupCheckbox {
+  white-space: break-spaces;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+  margin-top: 6px !important;
+  margin-bottom: -8px !important;
+}
+
+.editModeControl.editModeControl {
+  width: fit-content;
+  white-space: break-spaces;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+  margin: 6px 8px -8px;
+}
+
+.checkbox.checkbox {
+  pointer-events: auto;
+  color: rgba(92, 92, 92, 0.51);
+
+  &:global(.Mui-checked) {
+    color: rgba(92, 92, 92, 0.51);
+    background-color: var(--color-white);
+    border-radius: 2px;
+  }
+}

@@ -1,0 +1,17 @@
+@use "@/styles/helpers" as *;
+
+.sectiolnName:global(.MuiGrid2-root) {
+  font-family: var(--font-family-base), sans-serif;
+  max-width: 1700px;
+
+  & > h1 {
+    padding: 0;
+    margin: 0;
+    font-size: fluid(40, 24);
+  }
+}
+
+.wrapper:global(.MuiGrid2-root) {
+  max-width: 1700px;
+  margin: 0 auto;
+}

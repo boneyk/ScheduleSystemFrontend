@@ -1,0 +1,45 @@
+@use "@/styles/helpers" as *;
+
+.wrapper:global(.MuiDialogTitle-root) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  & :global(.MuiTypography-root) {
+    font-family: var(--font-family-base), sans-serif;
+  }
+
+  & :global(.MuiTypography-root):first-child {
+    font-weight: 400;
+    font-size: fluid(20, 16);
+  }
+}
+
+.content:global(.MuiDialogContent-root) {
+
+  & > :global(.MuiStack-root) {
+    & > :global(.MuiStack-root) {
+      & :global(.MuiTypography-root) {
+        font-family: var(--font-family-base), sans-serif;
+      }
+    }
+  }
+}
+
+.stackPosition:global(.MuiGrid2-root) {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  gap: 10px;
+
+  & :global(.MuiButtonBase-root) {
+    width: fluid-to-laptop(30, 25);
+    height: fluid-to-laptop(30, 25);
+    & :global(.MuiSvgIcon-root) {
+      width: fluid-to-laptop(30, 25);
+      height: fluid-to-laptop(30, 25);
+    }
+  }
+}

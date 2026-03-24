@@ -1,0 +1,67 @@
+@use '@/styles/helpers' as *;
+
+.wrapper {
+  display: flex;
+  @include flex-center();
+  margin-bottom: 10px;
+}
+
+.muitimetable {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  overflow-x: scroll;
+  overflow-y: auto;
+  height: 70%;
+  max-height: 500px;
+  overscroll-behavior: auto;
+  -webkit-overflow-scrolling: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+    -webkit-appearance: none;
+  }
+}
+
+.stickyFirstCol {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background-color: var(--color-white);
+  transition: background-color var(--transition-fast);
+}
+
+.cell:global(.MuiTableCell-root) {
+  height: 60px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.skeleton:global(.MuiSkeleton-root) {
+  height: calc(100% - 8px);
+  width: 100%;
+  transform: none;
+  margin: 0;
+}
+
+.loadingRow:global(.MuiTableRow-root) {
+  height: 60px;
+  padding: 0;
+}
+
+.dayView:global(.MuiTable-root) {
+  min-width: 1200px;
+
+  & :global(.MuiTableBody-root) :global(.MuiTableRow-root):last-child :global(.MuiTableCell-root) {
+    border-bottom: none;
+  }
+}
+
+.textHelper {
+  padding: 20px;
+}

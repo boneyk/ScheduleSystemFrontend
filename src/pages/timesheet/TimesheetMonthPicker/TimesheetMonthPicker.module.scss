@@ -1,0 +1,75 @@
+@use "@/styles/helpers" as *;
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  @include flex-center();
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: var(--timetable-header-padding-y);
+
+  @include tablet {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  @media (width <= 470px) {
+    margin-top: 0;
+  }
+}
+
+.monthSwitcher {
+  height: fluid(40, 30, true);
+  width: 100%;
+  max-width: 1700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include tablet {
+    @include visualy-hidden();
+  }
+}
+
+.monthButton:global(.MuiButton-root) {
+  width: fluid(130, 80, true);
+  height: fluid(40, 30, true);
+  border-radius: fluid(12, 6, true) !important;
+  font-size: fluid(16, 10, true) !important;
+  transition: transform var(--transition-base), background-color var(--transition-base), color var(--transition-base);
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.selectMonth {
+  width: 150px;
+  height: 40px;
+  border-radius: fluid(12, 8, true) !important;
+  font-size: 20px;
+  font-family: var(--font-family-base), sans-serif !important;
+
+  @include tablet-above {
+    @include visualy-hidden();
+  }
+
+  @media (width <= 470px) {
+    width: 100%;
+  }
+}
+
+.selectedMonthBtn:global(.MuiButton-root) {
+  color: var(--color-white);
+  background-color: #232323;
+  cursor: default;
+  pointer-events: none;
+}
+
+.formControl:global(.MuiFormControl-root) {
+  margin-bottom: 0;
+
+  @media (width <= 470px) {
+    width: 100%;
+  }
+}

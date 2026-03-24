@@ -1,0 +1,106 @@
+@use '@/styles/helpers' as *;
+
+.wrapper {
+  width: 100%;
+  font-family: var(--font-family-base), sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+}
+
+.title.title {
+  font-family: var(--font-family-base), sans-serif;
+  font-size: fluid(20, 16);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tableWrapper {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.headerCell {
+  flex: 1;
+  padding: 10px 16px;
+  font-family: var(--font-family-base), sans-serif;
+  font-weight: 600;
+  color: #000;
+  font-size: fluid-to-laptop(16, 12);
+  box-sizing: border-box;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  &:first-child {
+    flex: 2;
+  }
+}
+
+.sortIcon {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.scrollContainer {
+  overflow-y: auto;
+  position: relative;
+  flex: 1;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+}
+
+.row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: filter 0.15s;
+
+  &:hover {
+    filter: brightness(0.96);
+  }
+}
+
+.bodyCell {
+  flex: 1;
+  padding: 8px 16px;
+  font-family: var(--font-family-base), sans-serif;
+  font-size: fluid-to-laptop(16, 12);
+  white-space: normal;
+  word-break: break-word;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: 0;
+
+  &:first-child {
+    flex: 2;
+  }
+}

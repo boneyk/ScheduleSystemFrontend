@@ -1,0 +1,40 @@
+@use "../../../styles/helpers/mixins" as *;
+
+$move-button-width: 50px;
+$move-button-height: 30px;
+$move-button-radius: 15px;
+
+$move-button-hover-bg: rgba(220, 220, 220, 0.86);
+$move-button-disabled-bg: rgba(171, 171, 171, 0.86);
+
+$control-buttons-height: 40px;
+$control-buttons-gap: 15px;
+
+$workers-control-width: 300px;
+
+.timetableFooter {
+  width: 100%;
+  display: flex;
+  @include flex-center();
+}
+
+.move-button:global(.MuiButton-root) {
+  width: $move-button-width;
+  height: $move-button-height;
+  border-radius: $move-button-radius !important;
+
+  transition: transform var(--transition-base);
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.timetable-control-buttons {
+  @include flex-center();
+  flex: 1;
+  height: $control-buttons-height;
+  gap: $control-buttons-gap;
+  width: 100%;
+  max-width: 1700px;
+}

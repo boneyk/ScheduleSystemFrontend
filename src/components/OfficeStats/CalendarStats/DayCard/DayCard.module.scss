@@ -1,0 +1,81 @@
+@use "@/styles/helpers" as *;
+
+.card.card {
+  padding: 8px 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: var(--font-family-base), sans-serif;
+}
+
+.header.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: -6px;
+  margin-left: -12px;
+}
+
+.badge.badge {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+}
+
+.badgeToday.badgeToday {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 2px solid var(--color-pointer);
+}
+
+.badgeSelected.badgeSelected {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-pointer);
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 2px solid var(--color-pointer);
+}
+
+.roleList.roleList {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.roleListHorizontal.roleListHorizontal {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px 16px;
+}
+
+.roleItem.roleItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 6px;
+}
+
+.roleDot.roleDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-pointer);
+  flex-shrink: 0;
+}
+
+.roleText.roleText {
+  font-size: 14px;
+}

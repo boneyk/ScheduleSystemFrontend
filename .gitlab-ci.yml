@@ -1,0 +1,59 @@
+stages:
+  - install
+  - validate
+  - build
+  - deploy
+
+variables:
+  NODE_VERSION: "18"
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - node_modules/
+
+install:
+  stage: install
+  image: node:$NODE_VERSION-alpine
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 hour
+
+validate:
+  stage: validate
+  image: node:$NODE_VERSION-alpine
+  dependencies:
+    - install
+  script:
+    - npm run lint
+
+build:
+  stage: build
+  image: node:$NODE_VERSION-alpine
+  dependencies:
+    - install
+  script:
+    - npm run clean
+    - mkdir build
+    - npm run tag
+    - npx webpack --mode=production
+  artifacts:
+    paths:
+      - build/
+    expire_in: 1 hour
+
+pages:
+  stage: deploy
+  image: node:$NODE_VERSION-alpine
+  dependencies:
+    - build
+  script:
+    - mv build public
+  artifacts:
+    paths:
+      - public/
+  only:
+    - main

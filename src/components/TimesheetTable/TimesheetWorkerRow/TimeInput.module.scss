@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.segment {
+  width: 22px;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+
+  &:focus {
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 3px;
+  }
+}
+
+.separator {
+  padding: 0 1px;
+  user-select: none;
+}
+
+.disabledValue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: inherit;
+  user-select: none;
+}
+
+.draftWrapper {
+  & .segment {
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+  }
+
+  & .separator {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}

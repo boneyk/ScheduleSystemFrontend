@@ -1,0 +1,71 @@
+@use '@/styles/helpers' as *;
+
+$backgroundColor: #ffd9d9;
+$color: rgba(255, 0, 0, 0.6);
+$successBackgroundColor: #d9ffd9;
+$successColor: rgba(0, 128, 0, 0.7);
+$cautionBackgroundColor: #fff8d9;
+$cautionColor: rgba(180, 120, 0, 0.85);
+
+.wrapper:global(.MuiGrid2-root) {
+  position: fixed;
+  z-index: 100000;
+  display: flex;
+  padding: fluid(8, 4, true) fluid(32, 16, true);
+  background: $backgroundColor;
+  border-radius: var(--radius-s);
+  font-family: var(--font-family-base), sans-serif;
+  font-size: var(--font-size-m);
+  font-weight: 600;
+  border: 2px solid $color;
+  color: $color;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+  max-width: 200px;
+  opacity: 1;
+  transition:
+          opacity var(--transition-slow),
+          top var(--transition-slow),;
+
+  @include tablet-above {
+    max-width: 600px;
+  }
+
+  &.hidden {
+    opacity: 0;
+    top: -50px;
+    z-index: -1;
+  }
+
+  &.success {
+    background: $successBackgroundColor;
+    border-color: $successColor;
+    color: $successColor;
+  }
+
+  &.caution {
+    background: $cautionBackgroundColor;
+    border-color: $cautionColor;
+    color: $cautionColor;
+  }
+}
+
+.warningMessage:global(.MuiGrid2-root) {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  & > svg {
+    flex-shrink: 0;
+  }
+
+  & > span {
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+

@@ -1,0 +1,182 @@
+@use '@/styles/helpers' as *;
+
+.calendarGrid:global(.MuiTable-root) {
+  border: 1px solid rgba(0,0, 0, 0.4);
+  border-radius: 10px;
+  box-sizing: border-box;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+  @media (max-width: 760px) {
+    display: block;
+    max-height: 60vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    :global(.MuiTableBody-root),
+    :global(.MuiTableRow-root) {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.gridCell:global(.MuiTableCell-root) {
+  font-family: var(--font-family-base), sans-serif;
+  font-size: fluid(18, 14, true);
+  background-color: var(--color-white);
+  padding: fluid(8, 4, true);
+  color: rgba(0, 0, 0, 0.9);
+  vertical-align: top;
+
+  &.currentDay {
+    background-color: rgba(255, 100, 50, 0.2);
+
+    & .date {
+      font-weight: 600;
+    }
+  }
+
+  @media (max-width: 760px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    min-height: 80px;
+    border: none;
+    border-bottom: 1px solid rgba(0,0, 0, 0.4);
+
+    &.notCurrentMonthCell {
+      display: none;
+    }
+  }
+
+  &:first-child {
+    border-left: none;
+  }
+  &:last-child {
+    border-right: none;
+  }
+
+  &.notCurrentMonthCell {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+tr:first-child .gridCell:global(.MuiTableCell-root) {
+  border-top: none;
+}
+tr:last-child .gridCell:global(.MuiTableCell-root) {
+  @media (min-width: 761px) {
+    border-bottom: none;
+  }
+
+  @media (max-width: 760px) {
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.date {
+  height: fit-content;
+}
+
+.myShifts {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.wrapper:global(.MuiGrid2-root) {
+  flex-direction: column;
+  width: 100%;
+  min-height: fluid(120, 90, true);
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.shiftSpan {
+  width: 100%;
+  display: block;
+  white-space: break-spaces;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: var(--font-family-base), sans-serif;
+  font-size: fluid(12, 10, true);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  font-weight: 600;
+
+  @media (max-width: 760px) {
+    font-size: 14px;
+  }
+}
+
+.work {
+  @extend .shiftSpan;
+  background: rgba(226, 242, 246, 0.9);
+  color: rgba(40, 60, 65, 0.8);
+}
+
+.sick {
+  @extend .shiftSpan;
+  background: rgba(255, 248, 225, 0.95);
+  color: rgba(255, 152, 0, 1);
+}
+
+.vacation {
+  @extend .shiftSpan;
+  background: rgba(255, 235, 238, 0.95);
+  color: rgba(198, 40, 40, 1);
+}
+
+
+.weekDays:global(.MuiGrid2-root) {
+  width: 100%;
+  max-width: 1700px;
+  margin: 2px auto 5px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+  @media (max-width: 760px) {
+    display: none;
+  }
+
+  & > .weekDay:global(.MuiBox-root) {
+    font-family: var(--font-family-base), sans-serif;
+    display: flex;
+    @include flex-center();
+    font-weight: 600;
+    font-size: fluid(18, 12, true);
+  }
+}
+
+.dateWeekday:global(.MuiGrid2-root) {
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px;
+
+  @media (max-width: 760px) {
+    padding: 2px 8px;
+  }
+
+  & > .weekday {
+    @media (min-width: 761px) {
+      display: none;
+    }
+  }
+}

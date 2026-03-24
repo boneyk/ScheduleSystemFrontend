@@ -1,0 +1,79 @@
+@use "@/styles/helpers/mixins" as *;
+
+$move-button-width: 50px;
+$move-button-height: 30px;
+$move-button-radius: 15px;
+$control-buttons-height: 40px;
+$control-buttons-gap: 15px;
+$action-button-width: 150px;
+$action-button-height: 36px;
+$action-button-radius: 8px;
+$action-button-font-size: 14px;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  @include flex-center();
+  max-width: 1700px;
+  margin: 10px auto 0;
+}
+
+.moveButton:global(.MuiButton-root) {
+  width: $move-button-width;
+  height: $move-button-height;
+  border-radius: $move-button-radius !important;
+}
+
+.controlButtons {
+  @include flex-center();
+  flex: 1;
+  height: $control-buttons-height;
+  gap: $control-buttons-gap;
+  width: 100%;
+  max-width: 1700px;
+}
+
+.actionButtons {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.resetButton:global(.MuiButton-root),
+.saveButton:global(.MuiButton-root) {
+  width: $action-button-width;
+  height: $action-button-height;
+  border-radius: $action-button-radius !important;
+  font-size: $action-button-font-size;
+}
+
+.resetButton:global(.MuiButton-root) {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+@media (max-width: 801px) {
+  .wrapper {
+    flex-direction: column !important;
+  }
+
+  .actionButtons {
+    position: static;
+    margin: 6px auto 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .actionButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .resetButton:global(.MuiButton-root),
+  .saveButton:global(.MuiButton-root) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,296 @@
+@use '@/styles/helpers' as *;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+.userName {
+  font-size: fluid(18, 14, true);
+  font-family: var(--font-family-base), sans-serif;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 800;
+  white-space: nowrap;
+
+  @include laptop {
+    display: none;
+  }
+}
+.userBlock:global(.MuiBox-root) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: stretch;
+  gap: 8px;
+
+  @include mobile {
+    display: none;
+  }
+}
+.userAvatar {
+  font-size: fluid(26, 22, true) !important;
+  color: rgba(0, 0, 0, 0.7);
+  flex-shrink: 0;
+}
+.userInfo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 8px;
+  gap: 4px;
+  border-radius: fluid(8, 4, true);
+  transition: background-color var(--transition-base);
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+.arrowIcon {
+  font-size: fluid(20, 16, true) !important;
+  color: rgba(0, 0, 0, 0.7);
+  flex-shrink: 0;
+
+  @include laptop {
+    display: none;
+  }
+}
+
+.userItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.popoverContainer {
+  display: flex;
+}
+.popover {
+  padding: 16px;
+  width: 250px;
+}
+
+.dialogCloseBtn:global(.MuiIconButton-root) {
+  color: #9e9e9e;
+  margin-right: -8px;
+  margin-top: -5px;
+}
+
+.dialogCancelBtn:global(.MuiButton-root) {
+  padding: 8px 16px;
+}
+
+.dialogActions:global(.MuiDialogActions-root) {
+  padding: 0 16px 16px;
+  display: flex;
+  gap: 8px;
+
+  & > :not(:first-of-type) {
+    margin-left: 0;
+  }
+}
+
+.popoverPaper:global(.MuiPaper-root) {
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28) !important;
+}
+
+.popoverName {
+  font-weight: 600;
+  font-size: fluid(12, 10, true);
+  margin-bottom: 12px;
+  font-family: var(--font-family-base), sans-serif;
+}
+
+.popoverDivider {
+  margin-bottom: 12px !important;
+}
+.popoverLogoutDivider {
+  margin-top: 12px !important;
+  margin-bottom: 8px !important;
+
+  @include laptop-above {
+    display: none;
+  }
+}
+.popoverLogout:global(.MuiButton-root) {
+  background-color: #232323;
+  color: var(--color-white);
+  border-radius: fluid(10, 6, true);
+  font-size: fluid(14, 12, true);
+  font-family: var(--font-family-base), sans-serif;
+  font-weight: 600;
+  padding: 6px 12px;
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base);
+
+  &:hover {
+    color: #232323;
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+
+  @include laptop-above {
+    display: none;
+  }
+}
+
+.popoverIcon {
+  font-size: 18px !important;
+  color: rgba(0, 0, 0, 0.45);
+  flex-shrink: 0;
+}
+
+.popoverText {
+  font-size: fluid(11, 9, true);
+  font-family: var(--font-family-base), sans-serif;
+  color: rgba(0, 0, 0, 0.75);
+}
+.logo {
+  height: fluid(44, 33, true);
+}
+
+.content {
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.footer {
+  text-align: center;
+  padding: 16px 0;
+  background-color: var(--color-white);
+}
+
+.header:global(.MuiBox-root) {
+  width: calc(100% - 8px);
+  background-color: var(--color-contrast);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  height: fluid(60, 41, true);
+  margin: 0 auto;
+  max-width: 1700px;
+  position: relative;
+}
+
+.headerContent:global(.MuiStack-root) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.desktopNav {
+  display: flex;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.mobileNav {
+  display: none;
+  margin-left: auto;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.navBtn:global(.MuiButton-root) {
+  width: fluid-to-laptop(250, 130);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  height: 100%;
+  font-size: fluid(16, 10, true) !important;
+  font-family: var(--font-family-base), sans-serif;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  box-sizing: border-box;
+  padding: 0 12px;
+
+  &:last-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: #1a1a1a;
+    max-height: 100%;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &.selected {
+    background-color: transparent;
+    color: var(--color-pointer);
+    border-radius: 0;
+    border-bottom-color: var(--color-pointer);
+    cursor: default;
+    pointer-events: none;
+    transition: border-bottom-color var(--transition-base);
+  }
+
+  :global(.MuiButton-startIcon) {
+    & > svg {
+      font-size: fluid(18, 12, true);
+    }
+  }
+}
+
+.logout:global(.MuiButton-root) {
+  background-color: #232323;
+  box-sizing: border-box;
+  border-radius: fluid(12, 6, true);
+  font-size: fluid(16, 10, true);
+  color: var(--color-white);
+  border: 2px solid #232323;
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base),
+    transform var(--transition-base),
+    color var(--transition-base);
+  font-family: var(--font-family-base), sans-serif;
+  height: 80%;
+  padding: 2px 6px;
+
+  &:hover {
+    color: #232323;
+    background-color: var(--color-contrast);
+  }
+
+  :global(.MuiButton-endIcon) {
+    & > svg {
+      font-size: fluid(18, 12, true);
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @include laptop {
+    display: none;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}

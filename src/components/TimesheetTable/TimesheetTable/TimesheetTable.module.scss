@@ -1,0 +1,164 @@
+@use '@/styles/helpers' as *;
+
+$job-header-color: rgb(220, 246, 220);
+
+
+.wrapper.wrapper {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  border-radius: fluid(12, 6);
+  border: solid 1px var(--color-neutral-60);
+  overflow: hidden;
+}
+
+.tableContainer.tableContainer {
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  max-height: fluid(650, 400);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cellBox.cellBox {
+  display: flex;
+  @include flex-center();
+  text-align: center;
+}
+
+.headerCell.headerCell {
+  padding: 2px 8px;
+  z-index: 3 !important;
+  background-color: rgb(230, 230, 230) !important;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: fluid-to-laptop(16, 13);
+}
+
+.headerFullname.headerFullname {
+  width: fluid(220, 120) !important;
+  position: sticky;
+  left: 0;
+  z-index: 5 !important;
+  box-shadow: 5px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.groupCell.groupCell {
+  padding: 4px 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--color-neutral-60);
+}
+
+.specialCell.specialCell {
+  text-align: center;
+  width: fluid(150, 90) !important;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.skeletonRow:global(.MuiTableRow-root) {
+  height: 44px;
+}
+
+.skeletonCell:global(.MuiTableCell-root) {
+  padding: 6px 8px;
+  height: 44px;
+}
+
+.skeletonFirstCol:global(.MuiTableCell-root) {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background-color: var(--color-white);
+}
+
+.skeleton:global(.MuiSkeleton-root) {
+  height: 100%;
+  width: 100%;
+  transform: none;
+  border-radius: 6px;
+}
+
+.dayCell.dayCell {
+  padding: 2px 4px;
+  min-width: 60px;
+}
+
+.dayCellBox.dayCellBox {
+  flex-direction: column;
+  gap: 1px;
+}
+
+.dayNumber {
+  font-size: fluid-to-laptop(14, 11);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.weekdayLabel {
+  font-size: fluid-to-laptop(11, 9);
+  font-weight: 400;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.weekendHeaderCell.weekendHeaderCell {
+  background-color: rgb(205, 205, 205) !important;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.currentDayHeaderCell.currentDayHeaderCell {
+  background-color: rgb(245, 208, 197) !important;
+  color: rgba(0, 0, 0, 0.87);
+
+  & .dayNumber {
+    font-weight: 700;
+  }
+
+  & .weekdayLabel {
+    opacity: 1;
+    font-weight: 600;
+  }
+}
+
+.jobHeaderRow:global(.MuiTableRow-root) {
+  z-index: 1;
+  background-color: $job-header-color;
+  transition: background-color var(--transition-fast);
+
+  &:hover {
+    background-color: rgb(225, 251, 225);
+
+    & .jobHeaderCell {
+      background-color: rgb(225, 251, 225);
+    }
+  }
+}
+
+.jobHeaderCell:global(.MuiTableCell-root) {
+  color: #799f79;
+  font-weight: var(--font-weight-semibold);
+  font-size: fluid-to-laptop(13, 10);
+  padding: fluid(4, 2) fluid(8, 4);
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background-color: $job-header-color;
+  box-shadow: 5px 0 4px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-fast);
+}
+
+.jobHeaderBlank:global(.MuiTableCell-root) {
+  background-color: $job-header-color;
+  padding: 0;
+}
+
+.weekendJobCell:global(.MuiTableCell-root) {
+  background-color: rgb(195, 195, 195) !important;
+}
+
+.currentDayJobCell:global(.MuiTableCell-root) {
+  background-color: rgba(255, 100, 50, 0.15) !important;
+}

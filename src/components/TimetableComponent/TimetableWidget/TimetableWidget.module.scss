@@ -1,0 +1,95 @@
+@use "@/styles/helpers" as *;
+
+.sectiolnName:global(.MuiGrid2-root) {
+  font-family: var(--font-family-base), sans-serif;
+  max-width: 1700px;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction: row;
+
+  & > h1 {
+    padding: 0;
+    margin: 0;
+    font-size: fluid(40, 21);
+  }
+  
+}
+
+.radio.radio {
+  display: none;
+}
+
+.label.label {
+  font-family: var(--font-family-base), sans-serif;
+  font-size: fluid(35, 18);
+  line-height: 1.05;
+  font-weight: 600 !important;
+
+  @media (max-width: 540px) {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.radioGroup.radioGroup {
+  display: flex;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+}
+
+.radioWrapper.radioWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #6b6b6b;
+  transition: background-color var(--transition-base), color var(--transition-base);
+
+  @media (max-width: 540px) {
+    width: fluid(240, 120);
+  }
+  
+  @media (min-width: 541px) {
+    padding: 2px 8px 4px;
+    margin-top: 2px;
+  }
+
+  &:first-child {
+    border-top-left-radius: fluid(24, 12);
+    border-bottom-left-radius: fluid(24, 12);
+    border-right: none;
+  }
+
+  &:last-child {
+    border-top-right-radius: fluid(24, 12);
+    border-bottom-right-radius: fluid(24, 12);
+  }
+
+  &:has(:global(.Mui-checked)) {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.8);
+    cursor: default;
+  }
+
+  &:not(:has(:global(.Mui-checked))):hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+  }
+}
+
+.formControl.formControl {
+  margin-bottom: 0;
+
+  @media (min-width: 541px) {
+    margin-left: 8px;
+  }
+}
+
+@media (width <= 540px) {
+  .sectiolnName:has(.formControl) {
+    flex-direction: column;
+    margin-bottom: 4px;
+  }
+}

@@ -1,0 +1,36 @@
+@use "@/styles/helpers" as *;
+
+.wrapper:global(.MuiGrid2-root) {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto var(--margin-l);
+  padding-top: calc(var(--timetable-header-padding-y) / 2);
+}
+
+.dateSection:global(.MuiGrid2-root) {
+  display: flex;
+  align-items: center;
+  gap: fluid(16, 8, true);
+}
+
+.year {
+  display: flex;
+  @include flex-center();
+  margin: 0 var(--margin-xs);
+  font-family: var(--font-family-base), sans-serif;
+  font-size: fluid(35, 25, true);
+}
+
+.yearButton:global(.MuiButton-root) {
+  min-width: 0;
+  min-height: 0;
+  @include square(var(--timetable-controls-height));
+  border-radius: 50%;
+  transition: transform var(--transition-base);
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

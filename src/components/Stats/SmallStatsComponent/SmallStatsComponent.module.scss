@@ -1,0 +1,39 @@
+@use "@/styles/helpers" as *;
+
+.wrapper.wrapper {
+  border-radius: fluid(16, 8);
+  background-color: var(--color-white);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.14);
+  padding: fluid(8, 4) fluid(16, 8);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.widgetName.widgetName {
+  font-weight: 600;
+  font-size: calc(1.25rem - 4px);
+}
+
+.description.description {
+  color: #6e6e6e;
+  font-size: calc(1rem - 2px);
+}
+
+.value.value {
+  font-size: fluid(44, 20);
+
+  @media (width <= 1000px) {
+    font-size: 30px;
+  }
+}
+
+.progressbar {
+  margin-top: 5px;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  margin-bottom: 10px;
+}
